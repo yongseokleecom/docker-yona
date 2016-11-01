@@ -12,10 +12,10 @@ VOLUME /yona
 # Yona download & install
 RUN \
     mkdir -p /opt \
-    && wget -O /opt/yona.zip https://github.com/yona-projects/yona/releases/download/v1.0.2/yona-h2-v1.0.2-bin.zip \
+    && wget -O /opt/yona.zip https://github.com/yona-projects/yona/releases/download/v1.0.3/yona-h2-v1.0.3-bin.zip \
     && unzip /opt/yona.zip -d /opt \
     && rm /opt/yona.zip \
-    && mv /opt/yona-1.0.2 /opt/yona
+    && mv /opt/yona-1.0.3 /opt/yona
 
 # Add entrypoint
 ADD entrypoint.sh /opt/yona/bin/entrypoint.sh
