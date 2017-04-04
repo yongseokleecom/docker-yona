@@ -14,17 +14,12 @@ $ docker run -d -p 9000:9000 yongseoklee/docker-yona
 
 ### HOST 에 데이터 폴더 연결하여 실행
 ```
-$ docker run -d -p 9000:9000 \
--v /my/own/datadir:/yona \
-yongseoklee/docker-yona
+$ docker run -d -p 9000:9000 -v /my/own/datadir:/yona yongseoklee/docker-yona
 ```
 
 ### JAVA 옵션 추가하여 실행
 ```
-$ docker run -d -p 9000:9000 \
--e 'JAVA_OPTS=-Xms2048m -Xmx2048m' \
--v /my/own/datadir:/yona \
-yongseoklee/docker-yona
+$ docker run -d -p 9000:9000 -v /my/own/datadir:/yona -e 'JAVA_OPTS=-Xms2048m -Xmx2048m' yongseoklee/docker-yona
 ```
 
 ## License
