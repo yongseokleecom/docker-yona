@@ -1,7 +1,5 @@
 # Docker Yona (H2)
-**Yona H2 (Embedded H2 DB)** 를 사용하는 도커 이미지
-
-MariaDB 와 H2 고민된다면 [여기](https://github.com/yona-projects/yona#yona-배포판) 내용을 참고하세요.
+**Yona H2 (Embedded H2 DB)** 를 사용하는 도커 이미지. MariaDB 와 H2 고민된다면 [여기](https://github.com/yona-projects/yona#yona-배포판) 내용을 참고하세요.
 
 ## Yona?
 21세기 협업 개발 플랫폼
