@@ -3,25 +3,28 @@ MAINTAINER yongseoklee <yongseokleecom@gmail.com>
 
 RUN apk --update add --no-cache wget zip unzip bash && rm -rf /var/cache/apk/*
 
-# Java option
-ENV JAVA_OPTS "-Xms1024m -Xmx1024m"
-
-# Yona data
-VOLUME /yona
+# Build Arugments
+ARG YONA_VERSION=1.3.0
 
 # Yona download & install
 RUN \
     mkdir -p /opt \
-    && wget -O /opt/yona.zip https://github.com/yona-projects/yona/releases/download/v1.2.0/yona-h2-v1.2.0-bin.zip \
+    && wget -O /opt/yona.zip https://github.com/yona-projects/yona/releases/download/v${YONA_VERSION}/yona-h2-v${YONA_VERSION}-bin.zip \
     && unzip /opt/yona.zip -d /opt \
     && rm /opt/yona.zip \
-    && mv /opt/yona-1.2.0 /opt/yona
+    && mv /opt/yona-${YONA_VERSION} /opt/yona
 
 # Add entrypoint
 ADD entrypoint.sh /opt/yona/bin/entrypoint.sh
 RUN chmod +x /opt/yona/bin/entrypoint.sh
 
+# Yona data
+VOLUME /yona
+
+# Enviroment Variables
+ENV JAVA_OPTS "-Xms1024m -Xmx1024m"
+
 # Yona HTTP port
 EXPOSE 9000
 
-CMD ["/opt/yona/bin/entrypoint.sh"]
+ENTRYPOINT ["/opt/yona/bin/entrypoint.sh"]
