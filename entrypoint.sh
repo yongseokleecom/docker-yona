@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-export YONA_HOME=/yona
-export PID_FILE=${YONA_HOME}/RUNNING_PID
+export YONA_DATA=/yona
+export PID_FILE=/opt/yona/RUNNING_PID
 
 # Check JAVA Options
 if [ "x${JAVA_OPTS}" != "x" ]; then
