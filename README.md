@@ -47,11 +47,13 @@ yongseoklee/docker-yona
 ```
 
 ## Migration
-
-* 1.2.x to 1.3.x: [Yona 1.3으로 업그레이드 하기](https://github.com/yona-projects/yona/wiki/Yona-1.3으로-업그레이드-하기) 에서 업그레이드 방법 3~4번 적용
+### 1.2.x to 1.3.x
+1. [Yona 1.3으로 업그레이드 하기](https://github.com/yona-projects/yona/wiki/Yona-1.3으로-업그레이드-하기) 에서 업그레이드 방법 3~4번 적용
+2.  JDBC URL 절대 경로로 변경
+  - 변경 전: `db.default.url="jdbc:h2:file:./yona;MODE=PostgreSQL;MV_STORE=FALSE;MVCC=FALSE;CACHE_SIZE=131072;AUTO_SERVER=TRUE"`
+  - 변경 후: `db.default.url="jdbc:h2:file:/yona/yona;MODE=PostgreSQL;MV_STORE=FALSE;MVCC=FALSE;CACHE_SIZE=131072;AUTO_SERVER=TRUE"`
 
 ## License
-
 * yona: Copyright Yona Authors and NAVER Corp. under the Apache License, Version 2.0
 * docker-yona: Copyright YONGSEOK LEE, MIT License
 
