@@ -1,7 +1,7 @@
 FROM java:openjdk-8-jdk-alpine
 MAINTAINER yongseoklee <yongseokleecom@gmail.com>
 
-RUN apk --update add --no-cache wget zip unzip bash && rm -rf /var/cache/apk/*
+RUN apk --update add --no-cache wget zip unzip bash tzdata && rm -rf /var/cache/apk/*
 
 # Build Arugments
 ARG YONA_VERSION=1.5.1
@@ -23,6 +23,7 @@ VOLUME /yona
 
 # Enviroment Variables
 ENV JAVA_OPTS "-Xms1024m -Xmx1024m"
+ENV TZ "Asia/Seoul"
 
 # Yona HTTP port
 EXPOSE 9000
