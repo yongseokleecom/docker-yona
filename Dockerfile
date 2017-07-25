@@ -4,7 +4,7 @@ MAINTAINER yongseoklee <yongseokleecom@gmail.com>
 RUN apk --update add --no-cache wget zip unzip bash tzdata && rm -rf /var/cache/apk/*
 
 # Build Arugments
-ARG YONA_VERSION=1.6.1
+ARG YONA_VERSION=1.6.0
 
 # Yona download & install
 RUN \
