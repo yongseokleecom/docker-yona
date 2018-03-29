@@ -9,7 +9,7 @@ ARG YONA_VERSION=1.9.1
 # Yona download & install
 RUN \
     mkdir -p /opt \
-    && wget -O /opt/yona.zip https://github.com/yona-projects/yona/releases/download/v${YONA_VERSION}/yona-h2-v${YONA_VERSION}-bin.zip \
+    && wget -O /opt/yona.zip https://github.com/yona-projects/yona/releases/download/v${YONA_VERSION}/yona-v${YONA_VERSION}-h2.bin.zip \
     && unzip /opt/yona.zip -d /opt \
     && rm /opt/yona.zip \
     && mv /opt/yona-${YONA_VERSION} /opt/yona
