@@ -4,12 +4,12 @@ MAINTAINER yongseoklee <yongseokleecom@gmail.com>
 RUN apk --update add --no-cache wget zip unzip bash tzdata && rm -rf /var/cache/apk/*
 
 # Build Arugments
-ARG YONA_VERSION=1.9.1
+ARG YONA_VERSION=1.10.0
 
 # Yona download & install
 RUN \
     mkdir -p /opt \
-    && wget -O /opt/yona.zip https://github.com/yona-projects/yona/releases/download/v${YONA_VERSION}/yona-v${YONA_VERSION}-h2.bin.zip \
+    && wget -O /opt/yona.zip https://github.com/yona-projects/yona/releases/download/v${YONA_VERSION}/yona-h2-v1.10.0b-bin.zip \
     && unzip /opt/yona.zip -d /opt \
     && rm /opt/yona.zip \
     && mv /opt/yona-${YONA_VERSION} /opt/yona
